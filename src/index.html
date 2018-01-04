@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sandbox</title>
+</head>
+
+<body>
+    <div id="root">
+        <!-- Number -->
+        <p>0</p>
+        <button id="add">Add 1</button>
+        <button id="dec">Dec 1</button>
+    </div>
+    <script src="index.js"></script>
+    <script>
+        var state = new State({ val: 0, bindTo: 'p' });
+
+        document.querySelector('#add').addEventListener('click', function () {
+            state.update('val', state.getState().val + 1)
+        })
+
+        document.querySelector('#dec').addEventListener('click', function () {
+            state.update('val', state.getState().val - 1)
+        })
+
+    </script>
+</body>
+
+</html>
